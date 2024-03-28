@@ -12,7 +12,7 @@ function App() {
   console.log(test);
   return (
     <AppWrapper>
-      <Routes>
+      {/* <Routes>
         <Route path="/" element={<SharedLayout />}>
           <Route path="/first" element={<FirstPage />} />
           <Route path="/second" element={<SecondPage />}>
@@ -20,7 +20,7 @@ function App() {
           </Route>
           <Route path="*" element={<ErrorPage />} />
         </Route>
-      </Routes>
+      </Routes> */}
     </AppWrapper>
   );
 }
