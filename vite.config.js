@@ -12,5 +12,5 @@ export default defineConfig({
           assets: '/src/assets'
         },
       },
-      base: 'https://github.com/BekhUriy/WaterTracker/',
+      base: 'https://bekhuriy.github.io/WaterTracker/',
     });
