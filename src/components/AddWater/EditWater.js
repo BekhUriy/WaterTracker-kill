@@ -1,3 +1,5 @@
+import { Overlay, StyledCounter, StyledModal, StyledModalHeader } from "./StyledEditWater";
+
 export const EditWaterModal = ()=>{
 
     return (

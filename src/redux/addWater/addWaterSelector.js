@@ -1,0 +1,1 @@
+export const getPortions = state => state.portions;

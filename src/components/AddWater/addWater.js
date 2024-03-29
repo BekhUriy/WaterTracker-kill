@@ -1,5 +1,5 @@
-export const addWater = ()=>{
-    // const addWaterListItems= 
+export const addWaterList = ()=>{
+//  const dispatch=useDispatch()
     return (
         <div>
             <ul>
