@@ -10,7 +10,7 @@ export const fetchWaterPortionsList = async () => {
     console.log(responce.data);
     return responce.data;
   } catch (error) {
-    console.log(error)
+   return console.log(error)
   }
 };
 export const addWaterPortion = async ({portion }) => {

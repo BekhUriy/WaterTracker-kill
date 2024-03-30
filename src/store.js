@@ -13,6 +13,7 @@ import {
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
  import { rootReducer } from './redux/rootSlice';
+import { portionsReducer } from './redux/addWater/addWaterSlice';
 
 
 const persistConfig = {
@@ -29,6 +30,7 @@ export const store = configureStore({
 	reducer: {
 		root: rootReducer,
 		auth: persistedReducer,
+		portions: portionsReducer 
 	},
 	 middleware: getDefaultMiddleware =>
     getDefaultMiddleware({

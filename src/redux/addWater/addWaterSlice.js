@@ -6,7 +6,7 @@ const InitialState = {
   portions: [],
   isLoading: false,
   error: null,
-};
+  };
 const handlePending = state => {
   state.isLoading = true;
 };
