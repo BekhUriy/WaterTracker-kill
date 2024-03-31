@@ -5,6 +5,7 @@ import { loginThunk, refreshThunk, signUpThunk } from './thunk'
 const initialState = {
 	token: '',
 	profile: null,
+	isLogin: false,
 }
 
 const authSlice = createSlice({
@@ -14,17 +15,20 @@ const authSlice = createSlice({
 		logout: (state) => {
 			state.token = ''
 			state.profile = null
+			state.isLogin=false
 		},
 	},
 	extraReducers: (builder) => {
 		builder
             .addCase(signUpThunk.fulfilled,  (state, { payload }) => {
 	state.token = payload.token
-	state.profile = payload.user
+				state.profile = payload.user
+				
 })
 			.addCase(loginThunk.fulfilled, (state, { payload }) => {
-	state.token = payload.token
-	state.profile = payload.user
+				state.token = payload.token
+				state.profile = payload.user
+				state.isLogin = true
 })
 			.addCase(refreshThunk.fulfilled, (state, { payload }) => {
 	state.token = payload.token
@@ -33,7 +37,7 @@ const authSlice = createSlice({
 			.addCase(refreshThunk.rejected, (state) => {
 				state.token = ''
 				state.profile = null
-				
+				state.isLogin= false
 			})
 	},
 })
