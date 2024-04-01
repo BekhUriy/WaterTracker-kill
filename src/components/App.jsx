@@ -1,8 +1,4 @@
 import { Route, Routes } from 'react-router-dom';
-// import FirstPage from 'pages/FirstPage/FirstPage';
-// import SecondPage from 'pages/SecondPage/SecondPage';
-// import HalfPage from 'pages/HalfPage/HalfPage';
-// import ErrorPage from 'pages/ErrorPage/ErrorPage';
 // import { AppWrapper } from './App.styled';
 import SharedLayout from './SharedLayout/SharedLayout';
 import HomePage from '../pages/Home/Home';
