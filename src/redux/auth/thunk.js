@@ -8,7 +8,7 @@ export const signUpThunk = createAsyncThunk('auth/signUp', async (body, { reject
 	} catch (error) {
 		return rejectWithValue(error.response.data.error)
 	}
-				
+
 })
 
 export const loginThunk = createAsyncThunk('auth/login', async (body, { rejectWithValue }) => {
@@ -30,3 +30,16 @@ export const refreshThunk = createAsyncThunk(
 		}
 	}
 )
+
+export const logoutThunk = createAsyncThunk(
+  'auth/logout',
+  async (_, { rejectWithValue, getState }) => {
+    try {
+      const token = getState().auth.token;
+      await logoutApi(token);
+      return null;
+    } catch (error) {
+      return rejectWithValue(error.response.data.error);
+    }
+  }
+);
