@@ -1,10 +1,6 @@
 import styled from '@emotion/styled';
 
 export const ModalContainer = styled.div`
-    // position: fixed;
-        // left: ${(props) => props.x}px;
-        // top: ${(props) => props.y}px;
-
     display: flex;
     flex-direction: column;
     gap: 16px;
