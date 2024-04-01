@@ -6,7 +6,7 @@ import {
 } from './Header.styled';
 import sprite from '/src/assets/sprite.svg';
 
-export const Header = () => {
+const Header = () => {
 
   return (
     <HeaderContainer>
@@ -27,3 +27,6 @@ export const Header = () => {
     </HeaderContainer>
   );
 };
+
+
+export default Header;

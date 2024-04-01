@@ -10,9 +10,9 @@ import {
   StatisticsIcon,
   SubTittle,
   Tittle,
-} from './TrackerBenefits.styled';
+} from './WaterConsumptionTracker.styled';
 
-export const TrackerBenefits = () => {
+const WaterConsumptionTracker = () => {
   return (
     <>
       <Container>
@@ -38,3 +38,5 @@ export const TrackerBenefits = () => {
     </>
   );
 };
+
+export default WaterConsumptionTracker;
