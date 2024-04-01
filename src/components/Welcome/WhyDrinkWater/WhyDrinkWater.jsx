@@ -1,6 +1,6 @@
-import { Container, Item, List, Tittle } from "./WaterBenefits.styled"
+import { Container, Item, List, Tittle } from "./WhyDrinkWater.styled"
 
- export const WaterBenefits = () => {
+  const WhyDrinkWater = () => {
   return(
     <><Container>
     <Tittle>Why drink water</Tittle>
@@ -16,3 +16,4 @@ import { Container, Item, List, Tittle } from "./WaterBenefits.styled"
   )
 }
 
+export default WhyDrinkWater;
