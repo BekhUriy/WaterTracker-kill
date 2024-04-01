@@ -1,6 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { authReducer } from './redux/auth/authSlice';
-
+import  modalWindowSlicer from './redux/modalWindowSlicer';
+import settingModalSlicer from './redux/setingModalSlicer'
 import {
 	persistStore,
 	persistReducer,
@@ -13,6 +14,7 @@ import {
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
  import { rootReducer } from './redux/rootSlice';
+
 
 
 const persistConfig = {
@@ -29,6 +31,8 @@ export const store = configureStore({
 	reducer: {
 		root: rootReducer,
 		auth: persistedReducer,
+		modalWindow: modalWindowSlicer,
+        settingModal: settingModalSlicer,
 	},
 	 middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
