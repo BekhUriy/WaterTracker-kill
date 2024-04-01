@@ -1,4 +1,13 @@
 import { Route, Routes } from 'react-router-dom';
+<<<<<<< Updated upstream
+=======
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+// import FirstPage from 'pages/FirstPage/FirstPage';
+// import SecondPage from 'pages/SecondPage/SecondPage';
+// import HalfPage from 'pages/HalfPage/HalfPage';
+// import ErrorPage from 'pages/ErrorPage/ErrorPage';
+>>>>>>> Stashed changes
 // import { AppWrapper } from './App.styled';
 import SharedLayout from './SharedLayout/SharedLayout';
 import HomePage from '../pages/Home/Home';
@@ -7,15 +16,22 @@ import {PrivateRoute} from "../guards/PrivateRoute";
 import {PublicRoute} from "../guards/PublicRoute";
 import SignUpPage from '../pages/Signup/Signup';
 import SignInPage from '../pages/Singin/Singin';
-
+import { profileSelector } from '../redux/auth/selectors';
+import { refreshThunk } from '../redux/auth/thunk';
 // const test = import.meta.env.VITE_API_TEST;
 
 function App() {
   // console.log(test);
 
   // const dispatch = useDispatch();
+	const profile = useSelector(profileSelector)
+	const dispatch = useDispatch()
 
+	useEffect(() => {
+		!profile && dispatch(refreshThunk())
+	}, [dispatch, profile])
   return (
+   
     <Routes>
       <Route path="/" element={<SharedLayout />}>
         {/* <Route index element={<WelcomePage />} /> */}
@@ -47,7 +63,8 @@ function App() {
        
         <Route path="*" element={<WelcomePage />} />
       </Route>
-    </Routes>
+      </Routes>
+  
   );
 }
 export default App;
