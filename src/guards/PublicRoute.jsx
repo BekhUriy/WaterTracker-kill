@@ -1,10 +1,11 @@
-import { Navigate } from 'react-router-dom'
-import { useAuth } from "../hooks/isAuth";
+import { useSelector } from 'react-redux';
+import { isAuthSelector } from '../store/auth/selectors';
+import { Navigate, useLocation } from 'react-router-dom';
 
-export const PublicRoute = ({ component: Component, redirectTo = '/' }) => {
-	const { isLoggedIn } = useAuth();
+const PublicRoute = ({ children }) => {
+  const isAuth = useSelector(isAuthSelector);
+  const { state: prevLocation } = useLocation();
+  return !isAuth ? children : <Navigate to={prevLocation ?? '/'} />;
+};
 
-	return isLoggedIn ? <Navigate to={redirectTo} /> : Component;
-}
-
-// export default PublicRoute;
+export default PublicRoute;
