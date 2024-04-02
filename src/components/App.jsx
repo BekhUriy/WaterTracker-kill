@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import { GlobalStyles } from './globalStyles'; // імпорт глобальних стилів
+import { GlobalStyles } from '../GlobalStyles';
 import SharedLayout from './SharedLayout/SharedLayout';
 import HomePage from '../pages/Home/Home';
 import WelcomePage from '../pages/Welcome/Welcome';
