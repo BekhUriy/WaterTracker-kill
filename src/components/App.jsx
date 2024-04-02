@@ -1,6 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
+import { GlobalStyles } from './globalStyles'; // імпорт глобальних стилів
 import SharedLayout from './SharedLayout/SharedLayout';
 import HomePage from '../pages/Home/Home';
 import WelcomePage from '../pages/Welcome/Welcome';
@@ -22,37 +23,41 @@ function App() {
   useEffect(() => {
     !profile && dispatch(refreshThunk());
   }, [dispatch, profile]);
-  return (
-    <Routes>
-      <Route path="/" element={<SharedLayout />}>
-        {/* <Route index element={<WelcomePage />} /> */}
-        <Route
-          index
-          element={
-            <PublicRoute redirectTo="/home" component={<WelcomePage />} />
-          }
-        />
-        <Route
-          path="home"
-          element={<PrivateRoute redirectTo={'/'} component={<HomePage />} />}
-          // {<PublicRoute redirectTo={'/home'} component={<HomePage />}/>}
-        />
-        <Route
-          path="signup"
-          element={
-            <PublicRoute component={<SignUpPage />} redirectTo="/home" />
-          }
-        />
-        <Route
-          path="signin"
-          element={
-            <PublicRoute component={<SignInPage />} redirectTo="/home" />
-          }
-        />
 
-        <Route path="*" element={<WelcomePage />} />
-      </Route>
-    </Routes>
+  return (
+    <>
+      <GlobalStyles />
+      <Routes>
+        <Route path="/" element={<SharedLayout />}>
+          {/* <Route index element={<WelcomePage />} /> */}
+          <Route
+            index
+            element={
+              <PublicRoute redirectTo="/home" component={<WelcomePage />} />
+            }
+          />
+          <Route
+            path="home"
+            element={<PrivateRoute redirectTo={'/'} component={<HomePage />} />}
+            // {<PublicRoute redirectTo={'/home'} component={<HomePage />}/>}
+          />
+          <Route
+            path="signup"
+            element={
+              <PublicRoute component={<SignUpPage />} redirectTo="/home" />
+            }
+          />
+          <Route
+            path="signin"
+            element={
+              <PublicRoute component={<SignInPage />} redirectTo="/home" />
+            }
+          />
+
+          <Route path="*" element={<WelcomePage />} />
+        </Route>
+      </Routes>
+    </>
   );
 }
 export default App;
