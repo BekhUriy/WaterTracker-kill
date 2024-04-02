@@ -44,3 +44,5 @@ export const StyledAddWaterListFrame = styled.div`
 width: 264px;
 height: 212px;
 `
+export const StuledIconDelete = styled.button`
+`
