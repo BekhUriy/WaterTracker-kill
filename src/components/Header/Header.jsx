@@ -1,5 +1,5 @@
 import React from 'react';
-import { UserAuth } from '../UserAuth/UserAuth';
+import { UserAuth } from './UserAuth/UserAuth';
 import { UserButton } from './userButton/userButton';
 import { Block, HeaderStyled } from './header-styled';
 import { useSelector } from 'react-redux';
