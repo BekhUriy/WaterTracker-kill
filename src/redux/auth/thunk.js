@@ -30,3 +30,14 @@ export const refreshThunk = createAsyncThunk(
 		}
 	}
 )
+
+export const logoutThunk = createAsyncThunk(//дефолтна функція, потребує доопрацювання
+	'auth/logout',
+	async (_, { rejectWithValue, getState }) => {
+		try {
+			return await logoutApi(getState().auth.token)
+		} catch (error) {
+			return rejectWithValue(error.response.data.error)
+		}
+	}
+)

@@ -1,4 +1,4 @@
-import { UserAuth } from '../Header/UserAuth/UserAuth';
+import { UserAuth } from './UserAuth/UserAuth';
 import { UserButton } from './userButton/userButton';
 import { Block, HeaderStyled } from './Header-styled';
 import { useSelector } from 'react-redux';

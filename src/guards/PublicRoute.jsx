@@ -7,4 +7,4 @@ export const PublicRoute = ({ component: Component, redirectTo = '/' }) => {
 	return isLoggedIn ? <Navigate to={redirectTo} /> : Component;
 }
 
-// export default PublicRoute;
+export default PublicRoute;
