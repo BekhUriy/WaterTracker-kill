@@ -22,3 +22,16 @@ export const refreshApi = async (token) => {
 	})
 	return data
 }
+
+export const logoutApi = async token => {
+  const { data } = await authApi.post(
+    'auth/logout',
+    {},
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  );
+  return data;
+};

@@ -1,14 +1,16 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
-import { loginApi, refreshApi, signUpApi } from '../../API/ApiAuth';
+import { loginApi, refreshApi, signUpApi, logoutApi } from '../../API/ApiAuth';
 
 
 export const signUpThunk = createAsyncThunk('auth/signUp', async (body, { rejectWithValue }) => {
 	try {
-		return await signUpApi(body)
+		const user = await signUpApi(body);
+		const logInUser = await loginApi(user)
+		return logInUser
 	} catch (error) {
 		return rejectWithValue(error.response.data.error)
 	}
-				
+
 })
 
 export const loginThunk = createAsyncThunk('auth/login', async (body, { rejectWithValue }) => {
@@ -30,3 +32,16 @@ export const refreshThunk = createAsyncThunk(
 		}
 	}
 )
+
+export const logoutThunk = createAsyncThunk(
+  'auth/logout',
+  async (_, { rejectWithValue, getState }) => {
+    try {
+      const token = getState().auth.token;
+      await logoutApi(token);
+      return null;
+    } catch (error) {
+      return rejectWithValue(error.response.data.error);
+    }
+  }
+);
