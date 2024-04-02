@@ -5,6 +5,7 @@
 // import { getWaterPortionsThunk } from "../../redux/addWater/addWaterOperations";
 import { Avatar, IconButton, List, ListItem, ListItemAvatar, ListItemText } from '@mui/material'
 import { StyledAddWaterListContainer, StyledAddWaterListFrame, StyledAddWaterMainContainer, StyledListHeader } from './StyledaddWaterList'
+
 export const AddWaterList = ()=>{
 //  const dispatch = useDispatch();
 //  const {portions, isLoading, error} = useSelector(getPortions);
@@ -19,18 +20,19 @@ export const AddWaterList = ()=>{
 //         </li>
 //     )
 // })
-const PortionsListItem = ()=>{
+const WaterRecordsListItem = ()=>{
     return(
         <li>
+            <svg></svg>
      <time></time>
-     <p>200ml</p>
+     <span>200ml</span>
                </li>
     )
 }
 const PortionsList = ()=>{
     return(
         // {portions.length>0? portionsListItem :null}
-        <ul> <PortionsListItem/></ul>
+        <ul> <WaterRecordsListItem/></ul>
     )
 }
 
