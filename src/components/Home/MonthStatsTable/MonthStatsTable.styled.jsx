@@ -2,13 +2,13 @@ import styled from '@emotion/styled';
 
 export const WrapperMonth = styled.div`
     width: 264px;
-    background-color: #ecf2ff;
+    background-color: var(--background-tracker);
 
     @media screen and (min-width: 768px) {
         width: 656px;
     }
 
-    @media screen and (min-width: 1440px) {
+    @media screen and (min-width: 1158px) {
         width: 544px;
     }
 `;
@@ -21,12 +21,11 @@ export const HeaderMonth = styled.div`
 
     h2 {
         font-weight: 500;
-        line-height: 1.25;
-        margin: 0;
+        line-height: var(line-height);
 
         font-size: 24px;
 
-        color: #2f2f2f;
+        color: var(--text);
     }
 
     @media screen and (min-width: 768px) {
@@ -44,11 +43,11 @@ export const Pagination = styled.div`
     align-items: center;
     gap: 12px;
 
-    font-size: 16px;
+    font-size: var(font-size);
     font-weight: 400;
-    line-height: 1.25;
+    line-height: var(line-height);
 
-    color: #407bff;
+    color: var(--text-blue);
 `;
 
 export const ButtonPagination = styled.button`
@@ -59,13 +58,13 @@ export const ButtonPagination = styled.button`
     background-color: transparent;
 
     &:hover {
-        color: #7FAAFD;
+        color: #7FAAFD; // todo
     }
 `;
 
 export const IconWrapper = styled.div`
     svg {
-        color: ${(props) => props.isCurrentMonth ? '#6f6f6c' : 'inherit'};
+        color: ${(props) => props.isCurrentMonth ? "transparent" : 'inherit'};
         width: 14px;
         height: 14px;
     }
@@ -85,7 +84,6 @@ export const Days = styled.div`
                 (props) => props.lastDayNumber === 31 ?
                         'repeat(4, 50px)' : 'repeat(3, 50px)'
         };
-        //grid-template-rows: repeat(4, 50px);
         gap: 20px;
     }
 `;
@@ -98,7 +96,7 @@ export const DayPercentage = styled.div`
     width: 32px;
     height: 52px;
 
-    font-weight: 400;
+    font-weight: var(font-weight);
 
     color: #7FAAFD;
 `;
@@ -107,21 +105,21 @@ export const Day = styled.button`
     width: 32px;
     height: 32px;
     padding: 7px 6px;
-    border: 1px solid ${({ percentage }) => percentage ? '#fff' : '#ff9d43'};
+    border: 1px solid ${({percentage}) => percentage === 100 ? 'var(--background)' : 'var(--orange-color)'};
     border-radius: 20px;
     font-size: 14px;
     line-height: 1.28;
 
-    color: #2f2f2f;
-    background: #fff;
+    color: var(--text);
+    background: ${({isToday}) => isToday ? '#7FAAFD' : 'var(--background)'}; // todo
 
     @media screen and (min-width: 768px) {
         width: 34px;
         height: 34px;
         padding: 7px;
 
-        font-size: 16px;
-        line-height: 1.25;
+        font-size: vat(font-size);
+        line-height: var(line-height);
     }
 
     &:hover {
@@ -133,14 +131,14 @@ export const Percentage = styled.p`
     font-size: 10px;
     line-height: 1.6;
 
-    color: #9ebbff;
+    color: var(--text-passowrd);
 
     @media screen and (min-width: 768px) {
         font-size: 13px;
         line-height: 1.5;
     }
 
-    @media screen and (min-width: 1440px) {
+    @media screen and (min-width: 1158px) {
         font-size: 12px;
     }
 `;
