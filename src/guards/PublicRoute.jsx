@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import { isAuthSelector } from '../store/auth/selectors';
+import { isAuthSelector } from '../redux/auth/selectors';
 import { Navigate, useLocation } from 'react-router-dom';
 
 const PublicRoute = ({ children }) => {
