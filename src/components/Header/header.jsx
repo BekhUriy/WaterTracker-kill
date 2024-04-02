@@ -1,6 +1,6 @@
-import { UserAuth } from './header/UserAuth/UserAuth';
+import { UserAuth } from './UserAuth/UserAuth';
 import { UserButton } from './userButton/userButton';
-import { Block, HeaderStyled } from './header-styled';
+import { Block, HeaderStyled } from './Header-styled';
 import { useSelector } from 'react-redux';
 import { SiteLogo } from './siteLogo/siteLogo';
 

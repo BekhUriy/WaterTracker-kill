@@ -1,7 +1,7 @@
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
-import Header from '../Header/Header';
 import { LayoutBox } from './SharedLayout.styled';
+import Header from '../Header/Header';
 
 const SharedLayout = () => {
   return (
@@ -15,5 +15,4 @@ const SharedLayout = () => {
     </>
   );
 };
-
 export default SharedLayout;
