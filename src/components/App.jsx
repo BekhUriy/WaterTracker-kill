@@ -2,8 +2,8 @@ import { Route, Routes } from 'react-router-dom';
 import SharedLayout from './SharedLayout/SharedLayout';
 import HomePage from '../pages/Home/Home';
 import WelcomePage from '../pages/Welcome/Welcome';
-import { PrivateRoute } from '../guards/PrivateRoute';
-import { PublicRoute } from '../guards/PublicRoute';
+import PrivateRoute from '../guards/PrivateRoute';
+import PublicRoute from '../guards/PublicRoute';
 import SignUpPage from '../pages/Signup/Signup';
 import SignInPage from '../pages/Singin/Singin';
 
