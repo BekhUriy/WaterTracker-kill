@@ -27,6 +27,5 @@ export const UserLogoModalStyled = styled.div`
     position: absolute;
     background-color: #fff;
     top: 48px;
-    
    
 `

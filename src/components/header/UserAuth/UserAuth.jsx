@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { UserLogoSvg } from '../userLogoSvg/userLogoSvg';
 import { SignInStyled } from './UserAuth-style';
 
