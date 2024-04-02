@@ -1,6 +1,6 @@
 import axios from "axios"
 export const authApi = axios.create({
-	baseURL: 'https://practices-api.vercel.app/',
+	baseURL: 'https://watertrackerbackend-uo3w.onrender.com/api/',
 })
 
 
@@ -15,7 +15,7 @@ export const loginApi = async (body) => {
 }
 
 export const refreshApi = async (token) => {
-	const { data } = await authApi('auth/refresh', {
+	const { data } = await authApi('auth/current', {
 		headers: {
 			Authorization: `Bearer ${token}`,
 		},
