@@ -1,4 +1,4 @@
-import React from "react";
+//import React from "react";
 import { SettingSvg } from "./settingSvg/settingSvg";
 import { LogOutSvg } from "./logoutSvg/logoutSvg";
 import { LiStyled, UlStyled, UserLogoModalStyled } from "./userLogoModal-styled";
