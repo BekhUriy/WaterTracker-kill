@@ -18,8 +18,3 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     </BrowserRouter>
   </React.StrictMode>
 );
-{
-  /* <BrowserRouter basename="/">
-            <App />
-          </BrowserRouter> */
-}
