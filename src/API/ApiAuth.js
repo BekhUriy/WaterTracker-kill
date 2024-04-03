@@ -5,7 +5,7 @@ export const authApi = axios.create({
 });
 
 export const signUpApi = async (body) => {
-@@ -27,7 +27,7 @@ export const loginApi = async (body) => {
+export const loginApi = async (body) => {
 export const refreshApi = async (token) => {
   try {
     const { data } = await authApi.post(
